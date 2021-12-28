@@ -1,0 +1,213 @@
+header.Header
+{
+    height: 100vh;
+    .nav
+    {
+        background-color: transparent;
+        border-bottom: 1px solid rgba($secondary-color,.1);
+        z-index: 100;
+        padding: 0px;
+        height: 92px;
+        color: blanchedalmond;
+        @include media('tab-port')
+        {
+            height: auto;
+            background-color: $primary-text-color !important;
+        }
+        &-container
+        {
+            a
+            {
+                color: $secondary-color;
+            } 
+            &-toggler
+            {
+                border:none;
+                background-color: transparent;
+                outline: none;
+                color: $secondary-color;
+                padding: 0;
+                @include media('tab-port')
+                {
+                    display: flex;
+                    align-items: center;
+                }
+                &:focus
+                {
+                    box-shadow: 0 0 0 0;
+                }
+                &-icon
+                {
+                    background-color: $secondary-color;
+                    width: 30px;
+                    height: 3px;
+                    left: 0;
+                    border-radius:3px ;
+                    display: inline-block;
+                    position: relative;
+                    &::after,&::before
+                    {
+                        content: '';
+                        @extend .nav-container-toggler-icon;
+                        position: absolute;
+                    }
+                    &::before
+                    {
+                        top: -10px;
+                    }
+                    &::after
+                    {
+                        top: 10px;
+                    }
+                }
+            }
+            &-ul
+            {
+                height: 92px;
+                @include media('tab-port')
+                {
+                    width: 100vw;
+                    background-color: $primary-text-color;
+                }
+                &-items
+                {
+                    height: 100%;
+                    align-items: center;
+                    @include media('tab-port')
+                    {
+                        align-items: flex-start;
+                    }
+                    &-item
+                    {
+                        position: relative;
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                        margin-right: 1rem;
+                        &:last-of-type
+                        {
+                            margin-right: 0;
+                        }
+                        a
+                        {
+                            cursor: pointer;
+                            &.active
+                            {
+                                color: $primary-color !important;
+                            }
+                        }
+                        &-link , i
+                        {
+                            color: $secondary-color !important;
+                            transition: color 300ms ease-in-out;
+                        }
+                        &:hover a,&:hover i, &:focus i,&:focus a
+                        {
+                            color: $primary-color !important;
+                        }
+                    }
+                    .Item-Shop
+                    {
+                        @include media('tab-port')
+                        {
+                            flex-direction: column;
+                            align-items: flex-start;
+                        }
+                        a
+                        {
+                            display: flex;
+                            align-items: center;
+                        }
+                        ul
+                        {
+                            position: absolute;
+                            top: 90%;
+                            background-color: rgba($primary-text-color,.6);
+                            border-top: 10px solid $primary-text-color;
+                            border-bottom: 10px solid $primary-text-color;
+                            width: 150px;
+                            padding: 1rem;
+                            opacity: 0;
+                            transition:opacity .5s ease-in-out;
+                            @include media('tab-port')
+                            {
+                                width: 100%;
+                            }
+                            li
+                            {
+                                margin-bottom: .7rem;
+                                &:last-of-type
+                                {
+                                    margin-bottom: 0px;
+                                }
+                                a
+                                {
+                                    color: $secondary-dark-color !important;
+                                    text-align: start;
+                                    transition: color 300ms ease-in-out;
+                                }
+                                &:hover a, &:focus a
+                                {
+                                    color: $secondary-color !important;
+                                }
+                            }
+                        }
+                        &:hover ul
+                        {
+                            opacity: 1;
+                            @include media('tab-port')
+                            {
+                                position: relative;
+                            }
+                        }
+                    }
+                    .shopping
+                    {
+                        &-cart
+                        {
+                            position: relative;
+                            @include media('tab-port')
+                            {
+                                width: 100%;
+                            }
+                            @include media('tab-port')
+                            {
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                width: 100%;
+                            }
+                            span
+                            {
+                                width: 24px;
+                                height: 24px;
+                                position: absolute;
+                                top: -5px;
+                                right:-9px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                border-radius: 50%;
+                                background-color:$primary-light-color;
+                                color:$primary-text-color;
+                                @include media('tab-port')
+                                {
+                                    position: relative;
+                                    top: 0;
+                                    right: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+::selection
+{
+    background-color: $primary-color;
+    cursor: text;
+    color: $secondary-color;
+}

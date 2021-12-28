@@ -1,0 +1,17 @@
+%col-3
+{
+    @include media('tab-port') 
+    {
+        width: calc(100% / 2.2);    
+        &:nth-of-type(n)
+        {
+            margin-right: 0;
+            margin-bottom: 1.5rem;
+        }
+    }
+    @include media('phone')
+    {
+        width: calc(100% / 1.2);
+    }
+
+}
