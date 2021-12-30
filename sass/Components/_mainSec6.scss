@@ -1,0 +1,43 @@
+.main-sec6
+{
+    padding: 6.9rem 0;
+    &-wrapper
+    {
+        justify-content: center;
+        @extend %flex-wrap;
+        &-card
+        {
+            width: 255px;
+            text-align: center;
+            margin-right: 1.875rem;
+            @extend %col-3;
+            &:last-of-type
+            {
+                margin-right:0
+            }
+            &-img
+            {
+                @extend %div-bgMenu;
+                margin-bottom: 1.5rem;
+                margin-right:0;
+                width: 100%;
+            }
+            &-menu1
+            {
+                background-image: url(/images/menu-1.jpg.webp);
+            }
+            &-menu2
+            {
+                background-image: url(/images/menu-3.jpg.webp);
+            }
+            &-menu3
+            {
+                background-image: url(/images/menu-2.jpg.webp);
+            }
+            &-menu4
+            {
+                background-image: url(/images/menu-4.jpg.webp);
+            }        
+        }
+    }
+}

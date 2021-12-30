@@ -29,13 +29,20 @@
         }
         &-slides
         {
+            transform:perspective(400px) translateZ(-1rem);
+            opacity: 0;
+            transition: transform 500ms ease-in-out,opacity 400ms ease-in-out;
             &-img
             {
                 width: 100vw;
-                height: 100vh;
+                height: 750px;
                 background-size: cover;
                 background-position: 50% 30%;
                 background-repeat: no-repeat;
+                @include media('tab-port')
+                {
+                    height: 100vh;
+                }
             }
             &:first-of-type
             {
@@ -59,34 +66,81 @@
                     background-image: url(/images/bg_3.jpg.webp) ;
                 }
             }
-            &-btn
+
+            &.active
             {
-                button
+                transform: translateZ(0);
+                opacity: 1;
+            }
+            &-caption
+            {
+                @include media('tab-port')
                 {
-                    padding: 1.2rem 1.5rem;
-                    cursor: pointer;
-                    transition: background-color,border,color 300ms ease-in-out;
-                    &:first-of-type
+                    right: 0%;
+                    left: 0%;
+                }
+                h3
+                {
+                    text-transform: capitalize;
+                    font:500 1.875rem $secondary-font-family;
+                    color: $primary-color;
+                    margin-bottom: 1rem;
+                }
+                h2
+                {
+                    text-transform: uppercase;
+                    font:600 1.875rem/3rem $primary-font-family;
+                    letter-spacing: .14rem;
+                    width: 60%;
+                    margin-bottom: 1.5rem;
+                    @include media('tab-port')
                     {
-                        background-color: $primary-color;
-                        color: $primary-dark-color;
-                        margin-right: .1rem;
-                        &:hover
+                        width: 99%;
+                    }
+                }
+                p
+                {
+                    font:300 1.125rem/2rem $primary-font-family;
+                    margin-bottom: 3rem;
+                    width: 80%;
+                    letter-spacing: .06rem;
+                    word-spacing: .1rem;
+                    @include media('small-phone')
+                    {
+                        width: 100%;
+                    }
+                }
+                &-btn
+                {
+                    button
+                    {
+                        padding: 1.2rem 1.5rem;
+                        cursor: pointer;
+                        font: 500 .8125rem $primary-font-family;
+                        text-transform: capitalize;
+                        transition: background-color 300ms ease-in-out,color 300ms ease-in-out;
+                        &:first-of-type
+                        {
+                            background-color: $primary-color;
+                            color: $secondary-text-color;
+                            margin-right: .1rem;
+                            &:hover
+                            {
+                                border: 1px solid $secondary-color;
+                                color: $secondary-color;
+                                background-color: transparent;
+                            }
+                        }
+                        &:last-of-type
                         {
                             border: 1px solid $secondary-color;
                             color: $secondary-color;
-                            background-color: transparent;
-                        }
-                    }
-                    &:last-of-type
-                    {
-                        border: 1px solid $secondary-color;
-                        color: $secondary-color;
-                        &:hover
-                        {
-                            background-color: $primary-color;
-                            color: $primary-dark-color;
-                            border: 1px solid transparent;
+                            &:hover
+                            {
+                                background-color: $primary-color;
+                                color: $primary-dark-color;
+                                border: 1px solid transparent;
+                            }
                         }
                     }
                 }

@@ -1,6 +1,10 @@
 header.Header
 {
-    height: 100vh;
+    height: 750px;
+    @include media('tab-port')
+    {
+        height: 100vh;
+    }
     .nav
     {
         background-color: transparent;
@@ -12,7 +16,12 @@ header.Header
         @include media('tab-port')
         {
             height: auto;
-            background-color: $primary-text-color !important;
+            padding: 1rem 0;
+            background-color: $first-additional-color !important;
+        }
+        @include media('small-phone')
+        {
+            padding: 1rem;
         }
         &-container
         {
@@ -20,6 +29,29 @@ header.Header
             {
                 color: $secondary-color;
             } 
+            &-brand
+            {
+                text-transform: uppercase;
+                line-height: 0rem;
+                &:hover,&:active,&:focus,&:hover h3 , 
+                &:active h3,&:focus h3 ,&:hover span, 
+                &:active span,&:focus span
+                {
+                    color: $secondary-color;
+                    border: none;
+                    outline: none;
+                    box-shadow: 0 0 0 0;
+                }
+                h3
+                {
+                    font: 500 1.375rem $primary-font-family;
+                }
+                span
+                {
+                    font: 500 .75rem $primary-font-family;
+                    letter-spacing: .3rem;
+                }
+            }
             &-toggler
             {
                 border:none;
@@ -60,6 +92,11 @@ header.Header
                         top: 10px;
                     }
                 }
+                &-span
+                {
+                    font: 500 1rem $primary-font-family;
+                    margin-left: .5rem;
+                }
             }
             &-ul
             {
@@ -67,7 +104,7 @@ header.Header
                 @include media('tab-port')
                 {
                     width: 100vw;
-                    background-color: $primary-text-color;
+                    height: auto;
                 }
                 &-items
                 {
@@ -76,6 +113,7 @@ header.Header
                     @include media('tab-port')
                     {
                         align-items: flex-start;
+                        width: 100%;
                     }
                     &-item
                     {
@@ -83,14 +121,20 @@ header.Header
                         height: 100%;
                         display: flex;
                         align-items: center;
-                        margin-right: 1rem;
+                        margin-right: 2.5rem;
                         &:last-of-type
                         {
                             margin-right: 0;
                         }
+                        @include media('tab-port')
+                        {
+                            width: 100%;
+                        }
                         a
                         {
                             cursor: pointer;
+                            font:400 .8125rem $primary-font-family;
+                            text-transform: uppercase;
                             &.active
                             {
                                 color: $primary-color !important;
@@ -117,17 +161,24 @@ header.Header
                         {
                             display: flex;
                             align-items: center;
+                            i
+                            {
+                                margin-left: 4px;
+                                height: 22px;
+                                align-self: flex-start;
+                            }
                         }
                         ul
                         {
                             position: absolute;
                             top: 90%;
-                            background-color: rgba($primary-text-color,.6);
-                            border-top: 10px solid $primary-text-color;
-                            border-bottom: 10px solid $primary-text-color;
+                            background-color: $first-additional-color;
+                            border-top: 12px solid $primary-text-color;
+                            border-bottom: 12px solid $primary-text-color;
                             width: 150px;
                             padding: 1rem;
                             opacity: 0;
+                            pointer-events: none;
                             transition:opacity .5s ease-in-out;
                             @include media('tab-port')
                             {
@@ -144,6 +195,8 @@ header.Header
                                 {
                                     color: $secondary-dark-color !important;
                                     text-align: start;
+                                    font: 400 .8125rem $primary-font-family;
+                                    text-transform: capitalize;
                                     transition: color 300ms ease-in-out;
                                 }
                                 &:hover a, &:focus a
@@ -155,6 +208,7 @@ header.Header
                         &:hover ul
                         {
                             opacity: 1;
+                            pointer-events: visible;
                             @include media('tab-port')
                             {
                                 position: relative;

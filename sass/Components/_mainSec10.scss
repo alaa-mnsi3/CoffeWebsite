@@ -1,0 +1,49 @@
+.main-sec10
+{
+    padding: 6.8rem 0;
+    &-wrapper
+    {
+        &-sec
+        {
+            padding:3rem .9rem 0 .9rem;
+            @include media('tab-port')
+            {
+                margin-bottom: 1.5rem;
+            }
+            &-head
+            {
+                margin-bottom: .5rem;
+                span
+                {
+                    font:500 1rem $primary-font-family;
+                    color: $secondary-dark-color;
+                }
+                i
+                {
+                    font-size: 1rem;
+                    color: $secondary-dark-color;
+                }
+            }
+            &-img
+            {
+                width: 100%;
+                height: 270px;
+                margin-bottom: 1.5rem;
+                img
+                {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .header-card
+            {
+                transition: color 300ms ease-in-out;
+                display: inline-block;
+                &:hover,&:active
+                {
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+}

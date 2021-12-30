@@ -16,6 +16,7 @@
     "ansi-styles": "^3.2.1",
     "ansi-to-html": "^0.6.15",
     "anymatch": "^2.0.0",
+    "aos": "^2.3.4",
     "argparse": "^1.0.10",
     "arr-diff": "^4.0.0",
     "arr-flatten": "^1.1.0",

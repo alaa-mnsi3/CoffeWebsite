@@ -1,0 +1,72 @@
+.main-sec5
+{
+    padding: 6.59rem 0;
+    background: url(/images/bg_2.jpg.webp) no-repeat fixed 50% 30%;
+    background-size: cover;
+    position: relative;
+    &::after
+    {
+        content: '';
+        position: absolute;
+        background-color:rgba($primary-text-color,.6);
+        z-index: 1;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        left: 0;
+    }
+    &-wrapper
+    {
+        @extend %flex-wrap;
+        &-sec
+        {
+            z-index: 2;
+            width: 200px;
+            @extend %col-3;
+            i,p
+            {
+                color: $primary-color;
+            }
+            &-icon
+            {
+                margin-bottom: 2rem;
+                span
+                {
+                    position: relative;
+                    padding: 1.5rem;
+                    width: 80px;
+                    i
+                    {
+                        position: relative;
+                        font-size: 2rem;
+                    }
+                    &::after
+                    {
+                        @extend %i-after;
+                        border: 1px solid $primary-color;
+                        transform: rotate(0deg);
+                        transition: transform 300ms ease-in-out;
+                    }
+                    &:hover::after
+                    {
+                        background-color: $primary-color;
+                        transform: rotate(-135deg);
+                    }
+                    &:hover i
+                    {
+                        color: $primary-dark-color;
+                    }
+                }
+            }
+            p
+            {
+                font:600 1.875rem/2.3rem $primary-font-family ;
+            }
+            span
+            {
+                font:500 1rem/1.3rem $primary-font-family ;
+                color: $secondary-light-color;
+            }
+        }
+    }
+}

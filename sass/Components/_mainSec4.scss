@@ -1,0 +1,83 @@
+.main-sec4 
+{
+    padding: 6.56rem 0;
+    @include media('tab-port')
+    {
+        flex-direction: column;
+    }
+    &-info
+    {
+        margin-right: 3.5rem;
+        @include media('tab-port')
+        {
+            margin-right: 0rem;
+            margin-bottom: 2rem;
+        }
+        button
+        {
+            margin-top: 1.5rem;
+            padding: 1rem 1.5rem;
+            border: 1px solid $primary-color;
+            font:500 .8125rem $primary-font-family;
+            color: $primary-color;
+            text-transform: capitalize;
+        }
+    }
+    &-images
+    {
+        @include media('tab-port')
+        {
+            flex-direction: column;
+            width: 100%;
+        }
+        &-wrapper
+        {
+            @extend %flex-wrap;
+            div
+            {
+                margin-bottom: 3.5rem;
+                @extend %div-bgMenu;
+                &:nth-of-type(2)
+                {
+                    margin-bottom: 0px;
+                    @include media('tab-port')
+                    {
+                        margin-bottom: 1rem;
+                    }
+                }
+            }
+            &-menu1
+            {
+                background-image: url(/images/menu-1.jpg.webp);
+            }
+            &-menu2
+            {
+                background-image: url(/images/menu-3.jpg.webp);
+            }
+            &-menu3
+            {
+                background-image: url(/images/menu-2.jpg.webp);
+            }
+            &-menu4
+            {
+                background-image: url(/images/menu-4.jpg.webp);
+            }        
+        }
+        .wrapper-1
+        {
+            margin-top: -2.6%;
+            @include media('tab-port')
+            {
+                margin-top: 0;
+            }
+        }
+        .wrapper-2
+        {
+            margin-top: 2.6%;
+            @include media('tab-port')
+            {
+                margin-top: 0;
+            }
+        }
+    }
+}

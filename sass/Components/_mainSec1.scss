@@ -11,60 +11,60 @@
         }
         &-Details
         {
+            padding-top: 1.75rem;
+            height: fit-content;
+            align-items: baseline;
             &-icon
             {
-                margin-right: 1rem;
+                width: 40px;
+                @media (min-width:1097px) and(max-width:1300px) 
+                {
+                    width: auto;
+                    margin-right: .9rem;
+                }
+                @media (min-width:990px) and(max-width:1097px) 
+                {
+                    width: auto;
+                    margin-right: .25rem;
+                }
                 i
                 {
                     color: $primary-color;
                 }
             }
+            h4
+            {
+                font:600 1rem $primary-font-family;
+                margin-bottom: .5rem;
+            }
             p
             {
                 color: $secondary-dark-color;
+                font:600 .95rem/1.5rem $primary-font-family;
+                white-space: nowrap;
             }
         }
     
         &-form
         {
             background-color: $primary-color;
-            margin-top: -3%;
+            margin-top: -10%;
             z-index: 1;
             height: auto;
+            @include media('bigDesktop')
+            {
+                margin-top: -8%;
+            }
             @include media('tab-port')
             {
                 margin-top: 0;
             }
             form
             {
-                padding: 1rem;
-                height: 100%;  
-                input
-                {
-                    border-bottom: 1px solid rgba($secondary-color,.2);
-                    margin-right: .7rem;
-                    margin-bottom: 1rem;
-                    padding-bottom: .4rem;
-                }
-                textarea
-                {
-                    border-bottom: 1px solid rgba($secondary-color,.2); 
-                    margin-right: .7rem;
-                    @include media('tab-port')
-                    {
-                        width: 100%;
-                    } 
-                }
+                @extend %form;
                 ::placeholder
                 {
                     color: rgba($secondary-color,.8);
-                }
-                div
-                {
-                    @include media('tab-port')
-                    {
-                        flex-direction: column;
-                    }   
                 }
             }
         }

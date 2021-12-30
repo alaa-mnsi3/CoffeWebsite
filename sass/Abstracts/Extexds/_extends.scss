@@ -1,17 +1,164 @@
+// for making responsive card
 %col-3
 {
     @include media('tab-port') 
     {
-        width: calc(100% / 2.2);    
-        &:nth-of-type(n)
+        width: calc(100% / 2.2) !important;   
+        &:nth-of-type(2n)
         {
-            margin-right: 0;
+            margin-right: 0rem;
+            margin-bottom: 1.5rem;
+        } 
+        &:nth-of-type(2n-1)
+        {
+            margin-right: 1.5rem;
             margin-bottom: 1.5rem;
         }
     }
     @include media('phone')
     {
-        width: calc(100% / 1.2);
+        width: calc(100% / 1.2) !important;
+        &:nth-of-type(n)
+        {
+            margin-right: 0rem;
+            margin-bottom: 1.5rem;
+        } 
     }
 
+}
+// for bordeing in i
+%i-after
+{
+    content: "";
+    display: inline-block;
+    z-index: -1;
+    border: 1px solid $primary-dark-color;
+    position: absolute;
+    background-color: transparent;
+    transform: rotate(0deg);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+%div-bgMenu
+{
+    margin-right: 2rem;
+    width: 255px;
+    max-height: 200px;
+    height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 20%;
+    @include media('tab-port')
+    {
+        width: 100%;
+        margin-bottom: 2rem !important;
+        margin-right: 0px;
+    }
+}
+// flexing wrap
+%flex-wrap
+{
+    @include media('tab-port')
+    {
+        flex-wrap: wrap;
+    }
+}
+// from in page
+%form
+{
+    padding:1.5rem .75rem;
+    height: 100%;  
+    color: $secondary-color;
+    h4
+    {
+        margin-bottom: 1.5rem;
+        font: 400 1rem/1.5rem $primary-font-family;
+        text-transform: uppercase;
+    }
+    input,textarea
+    {
+        border-bottom: 1px solid rgba($secondary-color,.2);
+        margin-right: .7rem;
+        margin-bottom: 1.5rem;
+        padding: 1rem 0;
+        text-transform: capitalize;
+        font:500 .8125rem $primary-font-family;
+        color: rgba($secondary-color,.8);
+    }
+    input[type="time"]::-webkit-calendar-picker-indicator
+    {
+        filter: invert(100%) brightness(100%) contrast(100%);
+    }
+    input[type="date"]::-webkit-calendar-picker-indicator
+    {
+        filter: invert(100%) brightness(100%) contrast(100%);
+    }
+    textarea
+    {
+        margin-bottom: 0;
+        @include media('tab-port')
+        {
+            width: 100%;
+        } 
+    }
+    div
+    {
+        @include media('tab-port')
+        {
+            flex-direction: column;
+        }
+        input:last-of-type
+        {
+            margin-right: 0;
+        }
+        &:first-of-type
+        {
+            input
+            {
+                width: calc(100% / 2);
+                @include media('tab-port')
+                {
+                    width: 100%;
+                }
+            }
+        } 
+        &:nth-of-type(2)
+        {
+            input
+            {
+                width: calc(100% / 3);
+                @include media('tab-port')
+                {
+                    width: 100%;
+                }
+            }
+        } 
+        &:last-of-type
+        {
+            textarea,button
+            {
+                width: calc(100% / 2);
+                @include media('tab-port')
+                {
+                    width: 100%;
+                }
+            }
+            button
+            {
+               background-color: $secondary-color;
+               color: $primary-text-color; 
+               font:500 .8125rem $primary-font-family;
+               text-transform: capitalize;
+               @include media('tab-port')
+               {
+                  margin-top: 1.5rem;
+                  width: fit-content;
+                  padding: 0.7rem 1rem;
+                  align-self: center;
+               }
+            }
+        }  
+    }
 }

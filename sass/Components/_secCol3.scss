@@ -1,7 +1,15 @@
 .sec-col3
 {
     background-color: $primary-color;
-    padding: 6rem 8rem;
+    padding: 6.59rem 8rem;
+    @include media('phone')
+    {
+        padding: 6.59rem 2rem;
+    }
+    @include media('small-phone')
+    {
+        padding: 6.59rem 1rem;
+    }
     &-parent
     {
         @include media('tab-port')
@@ -20,20 +28,28 @@
                     color: $primary-dark-color;
                     position: relative;
                     display: inline-block;
+                    z-index: 1;
+                    font-size: 3.2rem;
                     padding: 1rem;
                     &::after
                     {
-                        content: "";
-                        display: inline-block;
-                        z-index: -1;
-                        border: 1px solid $primary-dark-color;
-                        position: absolute;
-                        width: 100%;
-                        height: 100%;
-                        top: 0;
-                        left: 0;
-                        z-index: 1;
+                       @extend %i-after;
                     }
+                }
+            }
+            &-caption
+            {
+                h3
+                {
+                    font:500 1.125rem/4rem $primary-font-family ;
+                    margin-bottom: 1.25rem;
+                    text-transform: uppercase;
+                }
+                p
+                {
+                    font:300 1rem/1.5rem $primary-font-family ;
+                    color: $secondary-text-color;
+                    width: 90%;
                 }
             }
         }

@@ -1,0 +1,32 @@
+.main-sec11
+{
+    background-color: $primary-text-color;
+    padding:0 0 6rem 0;
+    &-form
+    {
+        padding-left: 4.5rem;
+        padding-right: 13rem;
+        @include media('tab-port')
+        {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        form
+        {
+            @extend %form;
+            margin-top: 2rem;
+            div:last-of-type
+            {
+                button
+                {
+                    background-color: $primary-color;
+                    color: $first-additional-color;
+                }
+            }
+        }
+        ::placeholder
+        {
+            color: rgba($secondary-color,.8);
+        }
+    }
+}

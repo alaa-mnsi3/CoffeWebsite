@@ -3,12 +3,9 @@
     &-bg
     {
         overflow:hidden;
-        height: 500px;
-        img
-        {
-            transform: scale(1.3) translateY(-9%);
-            height: 100%;
-        }
+        height: 620px;
+        background: url(/images/about.jpg.webp) no-repeat center;
+        background-size: cover;
     }
     &-info
     {
@@ -16,7 +13,6 @@
         margin-left:-8%;
         z-index: 1;
         padding: 2rem 2rem 3rem 2rem;
-        margin-top: 2%;
         @include media('phone')
         {
             background-color: transparent;
